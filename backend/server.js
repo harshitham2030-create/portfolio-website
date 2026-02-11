@@ -1,25 +1,9 @@
-const express = require("express");
-const mongoose = require("mongoose");
+ <form action="https://formspree.io/f/xreaeyvb" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required><br><br>
 
-const app = express();
-app.use(express.json());
+  <input type="email" name="email" placeholder="Your Email" required><br><br>
 
-// Database connection (example)
-mongoose.connect("mongodb://localhost:27017/portfolio");
+  <textarea name="message" placeholder="Your Message" required></textarea><br><br>
 
-// Schema
-const Contact = mongoose.model("Contact", {
-  name: String,
-  email: String,
-  message: String
-});
-
-// API
-app.post("/contact", (req, res) => {
-  Contact.create(req.body);
-  res.send("Data saved to database");
-});
-
-app.listen(3000, () => {
-  console.log("Server running");
-});
+  <button type="submit">Send</button>
+</form>
